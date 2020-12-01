@@ -1,7 +1,6 @@
-DATA_DIR=/path/to/data
-MODEL_DIR=/path/to/model
-#CODE_DIR=.
-CODE_DIR=/path/to/research/object_detection
+DATA_DIR=path/to/data
+MODEL_DIR=path/to/model
+CODE_DIR=path/to/research/object_detection
 
 TRAIN_IMAGE_PATH=$DATA_DIR/my_data/images/train
 TEST_IMAGE_PATH=$DATA_DIR/my_data/images/test
