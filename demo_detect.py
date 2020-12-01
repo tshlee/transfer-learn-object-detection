@@ -19,6 +19,7 @@ def process_context(saved_model_path):
         M = int(detections.pop('num_detections'))
         detections = {k: v[0,:M].numpy() for k,v in detections.items()}
         detections['num_detections'] = M
+        return detections
     yield process_fn
 
 def image_path_source():
@@ -28,4 +29,4 @@ def image_path_source():
 EXPORTED_MODEL_PATH = sys.argv[1]
 with process_context(os.path.join(EXPORTED_MODEL_PATH, 'saved_model')) as process_fn:
     for image_path in image_path_source():
-        process_fn(image_path)
+        detections = process_fn(image_path)
